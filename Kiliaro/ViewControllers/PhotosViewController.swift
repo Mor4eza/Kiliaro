@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PhotosViewController: UIViewController {
 
@@ -17,12 +18,30 @@ class PhotosViewController: UIViewController {
         }
     }
     
-    
+    private let refreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        fetchData()
+    }
+    
+    func setupCollectionView() {
+        imagesCollectionView.delegate = self
+        imagesCollectionView.dataSource = self
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        imagesCollectionView.setCollectionViewLayout(layout, animated: true)
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        imagesCollectionView.refreshControl = refreshControl
+    }
+    
+    func fetchData() {
+        self.refreshControl.beginRefreshing()
         imageViewModel.fetchImages { result in
-            
+            self.refreshControl.endRefreshing()
             switch result {
                 case .success(let images):
                     self.images = images
@@ -33,17 +52,12 @@ class PhotosViewController: UIViewController {
             
         }
     }
-
-    func setupCollectionView() {
-        imagesCollectionView.delegate = self
-        imagesCollectionView.dataSource = self
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 5
-        imagesCollectionView.setCollectionViewLayout(layout, animated: true)
-    }
     
+    @objc func refreshData() {
+        ImageCache.default.clearCache()
+        ImageCache.default.clearDiskCache()
+        fetchData()
+    }
 }
 
 extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -54,7 +68,7 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
-        cell.imageView.image = UIImage(systemName: "pencil")
+        cell.setupCell(image: images[indexPath.item])
         return cell
     }
     
