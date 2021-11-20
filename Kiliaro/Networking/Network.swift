@@ -60,7 +60,7 @@ class Network: NetworkClient {
 extension Network {
     private func prepareRequest<T: Requestable>(_ req: T) -> URLRequest {
         
-        let url = URL(string: req.path)!
+        let url = URL(string: AppConstant.baseURL + req.path)!
         var request = URLRequest(url: url)
         request.httpMethod = req.method.rawValue
         

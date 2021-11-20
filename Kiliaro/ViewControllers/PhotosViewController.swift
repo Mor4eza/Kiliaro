@@ -10,10 +10,28 @@ import UIKit
 class PhotosViewController: UIViewController {
 
     @IBOutlet weak var imagesCollectionView: UICollectionView!
+    var imageViewModel = ImageViewModel()
+    var images = [ImageModel]() {
+        didSet {
+            imagesCollectionView.reloadData()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        imageViewModel.fetchImages { result in
+            
+            switch result {
+                case .success(let images):
+                    self.images = images
+                    
+                case .failure(let error):
+                    print(error)
+            }
+            
+        }
     }
 
     func setupCollectionView() {
@@ -31,7 +49,7 @@ class PhotosViewController: UIViewController {
 extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
