@@ -12,7 +12,7 @@
         <!--Kiliaro-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kiliaro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PhotosViewController" customModule="Kiliaro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="160" height="147"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="hKL-AY-QhP" id="tMT-qL-he4"/>
+                                            <outlet property="sizeLabel" destination="n9B-2k-CHs" id="5ZN-N7-8fY"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -69,7 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Kiliaro" id="NB9-26-FKm"/>
                     <connections>
-                        <outlet property="imagesCollectionView" destination="QsY-eU-Z2I" id="802-xA-8zV"/>
+                        <outlet property="imagesCollectionView" destination="QsY-eU-Z2I" id="zh9-RY-wFr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
