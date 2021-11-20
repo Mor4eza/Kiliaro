@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		723219762748E9F5003FD9B5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723219752748E9F5003FD9B5 /* Network.swift */; };
+		7232197B2748EAF8003FD9B5 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232197A2748EAF8003FD9B5 /* Requestable.swift */; };
 		72F350102748DDF50094D3FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3500F2748DDF50094D3FB /* AppDelegate.swift */; };
 		72F350122748DDF50094D3FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F350112748DDF50094D3FB /* SceneDelegate.swift */; };
 		72F350142748DDF50094D3FB /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F350132748DDF50094D3FB /* PhotosViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		723219752748E9F5003FD9B5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		7232197A2748EAF8003FD9B5 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		72F3500C2748DDF50094D3FB /* Kiliaro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiliaro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F3500F2748DDF50094D3FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72F350112748DDF50094D3FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		723219742748E755003FD9B5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				723219752748E9F5003FD9B5 /* Network.swift */,
+				7232197A2748EAF8003FD9B5 /* Requestable.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		72F350032748DDF40094D3FB = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,7 @@
 		72F3500E2748DDF50094D3FB /* Kiliaro */ = {
 			isa = PBXGroup;
 			children = (
+				723219742748E755003FD9B5 /* Networking */,
 				72F350422748DF300094D3FB /* Views */,
 				72F3500F2748DDF50094D3FB /* AppDelegate.swift */,
 				72F350112748DDF50094D3FB /* SceneDelegate.swift */,
@@ -269,8 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				723219762748E9F5003FD9B5 /* Network.swift in Sources */,
 				72F350142748DDF50094D3FB /* PhotosViewController.swift in Sources */,
 				72F350442748DF480094D3FB /* ImageCell.swift in Sources */,
+				7232197B2748EAF8003FD9B5 /* Requestable.swift in Sources */,
 				72F350102748DDF50094D3FB /* AppDelegate.swift in Sources */,
 				72F350122748DDF50094D3FB /* SceneDelegate.swift in Sources */,
 			);
