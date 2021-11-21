@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721CB4E52749450700272F6D /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721CB4E42749450700272F6D /* ImageDetailsViewController.swift */; };
 		723219762748E9F5003FD9B5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723219752748E9F5003FD9B5 /* Network.swift */; };
 		7232197B2748EAF8003FD9B5 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7232197A2748EAF8003FD9B5 /* Requestable.swift */; };
 		723219812748EB89003FD9B5 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723219802748EB89003FD9B5 /* ImageModel.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		721CB4E42749450700272F6D /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		723219752748E9F5003FD9B5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		7232197A2748EAF8003FD9B5 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		723219802748EB89003FD9B5 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				72F350132748DDF50094D3FB /* PhotosViewController.swift */,
+				721CB4E42749450700272F6D /* ImageDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -165,7 +168,6 @@
 				72321AB0274918EE003FD9B5 /* ViewControllers */,
 				72F3500F2748DDF50094D3FB /* AppDelegate.swift */,
 				72F350112748DDF50094D3FB /* SceneDelegate.swift */,
-				72F350152748DDF50094D3FB /* Main.storyboard */,
 				72F350182748DDF70094D3FB /* Assets.xcassets */,
 				72F3501A2748DDF70094D3FB /* LaunchScreen.storyboard */,
 				72F3501D2748DDF70094D3FB /* Info.plist */,
@@ -194,6 +196,7 @@
 		72F350422748DF300094D3FB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				72F350152748DDF50094D3FB /* Main.storyboard */,
 				72F350432748DF480094D3FB /* ImageCell.swift */,
 			);
 			path = Views;
@@ -340,6 +343,7 @@
 				72F350442748DF480094D3FB /* ImageCell.swift in Sources */,
 				7232197B2748EAF8003FD9B5 /* Requestable.swift in Sources */,
 				72F350102748DDF50094D3FB /* AppDelegate.swift in Sources */,
+				721CB4E52749450700272F6D /* ImageDetailsViewController.swift in Sources */,
 				723219872748EBDA003FD9B5 /* AppConstant.swift in Sources */,
 				72321AB327491929003FD9B5 /* ImageViewModel.swift in Sources */,
 				72F350122748DDF50094D3FB /* SceneDelegate.swift in Sources */,

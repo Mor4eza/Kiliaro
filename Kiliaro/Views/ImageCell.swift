@@ -12,22 +12,17 @@ class ImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var sizeLabel: UILabel!
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.kf.indicatorType = .activity
-
-    }
-    
     func setupCell(image: ImageModel) {
-        guard let url = URL(string: image.thumbnailUrl) else {
+        
+        //append thumbnail url params
+        guard let url = URL(string: image.thumbnailUrl + "?w=250&h=250&m=md")  else {
             return
         }
-        let processor = DownsamplingImageProcessor(size: CGSize(width: 300, height: 300))
+        
         imageView.kf.setImage(
             with: url,
             placeholder: UIImage(systemName: "photo.on.rectangle.fill"),
             options: [
-                .processor(processor),
                 .loadDiskFileSynchronously,
                 .cacheOriginalImage,
                 .transition(.fade(0.25)),

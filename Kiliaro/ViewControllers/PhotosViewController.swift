@@ -47,7 +47,9 @@ class PhotosViewController: UIViewController {
                     self.images = images
                     
                 case .failure(let error):
-                    print(error)
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
             }
             
         }
@@ -70,6 +72,12 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
         cell.setupCell(image: images[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = ImageDetailsViewController()
+        detailVC.image = images[indexPath.item]
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
